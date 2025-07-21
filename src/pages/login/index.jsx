@@ -29,6 +29,8 @@ const LoginPage = () => {
     } finally {
       setLoading(false);
     }
+
+    e.target.reset();
   };
   return (
     <LoginWrapper>

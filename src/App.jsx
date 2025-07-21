@@ -4,6 +4,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import MainLayout from "./layout/Main";
 import AboutPage from "./pages/About";
 import Contact from "./pages/Contact";
+import RegisterPage from "./pages/Register";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       </Route>
 
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
     </Routes>
   );
 }

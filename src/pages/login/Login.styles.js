@@ -5,25 +5,48 @@ export const LoginWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   & form {
     max-width: 400px;
     width: 100%;
-    margin: 0 auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 
     input,
     button {
-      padding: 6px;
-      background-color: #ffffff98;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
     }
+
+    input:focus {
+      border-color: #0077ff;
+      outline: none;
+    }
+
     button {
+      background-color: #0077ff;
+      color: white;
       font-weight: bold;
       cursor: pointer;
-      background-color: #fff;
+    }
+
+    button:hover {
+      background-color: #005dda;
     }
   }
 `;

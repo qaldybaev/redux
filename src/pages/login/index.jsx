@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { auth, fakeLoginApiFn } from "../../utils/auth.fake";
 import { LoginWrapper } from "./Login.styles";
 import { use, useContext, useState } from "react";
@@ -21,17 +21,19 @@ const LoginPage = () => {
       });
 
       if (!!res?.token) {
-        navigate("/");
-        setLoading(false);
         login(res.user, res.token);
+        navigate("/");
       }
     } catch (error) {
       toast.error(error.message || "Login failed");
+    } finally {
+      setLoading(false);
     }
   };
   return (
     <LoginWrapper>
       <form onSubmit={handleSubmit}>
+        <h2 style={{ textAlign: "center" }}>Login</h2>
         <input
           required
           name="email"
@@ -49,6 +51,7 @@ const LoginPage = () => {
         <button type="submit" disabled={loading}>
           {loading ? "Loading..." : "Login"}
         </button>
+        <NavLink to="/register">Register</NavLink>
       </form>
     </LoginWrapper>
   );
